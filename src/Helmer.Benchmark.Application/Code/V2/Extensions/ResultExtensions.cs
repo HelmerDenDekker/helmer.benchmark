@@ -58,7 +58,7 @@ public static class ResultExtensions
 			case Result.UnavailableForLegalReasons:
 				return "The request cannot be processed by the server, due to legal reasons.";
 			case Result.InternalServerError:
-				return "The request cannot be processed by the server. A generic error has occured.";
+				return "The request cannot be processed by the server. A generic error has occurred.";
 			case Result.NotImplemented:
 				return "The request cannot be processed by the server. This functionality is not implemented";
 			default:
