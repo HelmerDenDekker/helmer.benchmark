@@ -2,8 +2,7 @@
 using Helmer.Benchmark.Application.Code;
 using Microsoft.AspNetCore.WebUtilities;
 
-namespace Helmer.Benchmark.Application
-{
+namespace Helmer.Benchmark.Application;
     public class GuidBenchmark
 	{
 		private Guid _guid = Guid.NewGuid();
@@ -21,4 +20,4 @@ namespace Helmer.Benchmark.Application
         [Benchmark]
         public void GuidEncode() => _guid.EncodeBase64String();
 	}
-}
+
