@@ -1,42 +1,37 @@
-﻿
-using Helmer.Benchmark.Application.Code.V2.Extensions;
+﻿using Helmer.Benchmark.Application.Code.V2.Extensions;
 
 namespace Helmer.Benchmark.Application.Code.V2;
 
-    public static class ResultTest
-    {
-        public static Result TestCreateCommandType()
-        {
-            return Result.Conflict;
-        }
+public static class ResultTest
+{
+	public static Result TestCreateCommandType()
+	{
+		return Result.Conflict;
+	}
 
-        public static ValueResult<Guid> TestCreateQueryType() 
-        { 
-            var guid = Guid.NewGuid();
-            var result = ValueResult<Guid>.Ok(guid);
-        
-            return result;
-        }
+	public static ValueResult<Guid> TestCreateQueryType()
+	{
+		var guid = Guid.NewGuid();
+		var result = ValueResult<Guid>.Ok(guid);
 
-        public static string TestCompareLogic()
-        {
-            var cmndResult = TestCreateCommandType();
+		return result;
+	}
 
-            var valueResult = TestCreateQueryType();
+	public static string TestCompareLogic()
+	{
+		var commandResult = TestCreateCommandType();
 
-            if (cmndResult == valueResult.Result)
-            {
-                return "same";
-            }
+		var valueResult = TestCreateQueryType();
 
-            if (!valueResult.Result.IsSuccess())
-                return "failure";
+		if (commandResult == valueResult.Result)
+			return "same";
 
+		if (!valueResult.Result.IsSuccess())
+			return "failure";
 
-            if (valueResult.Result == Result.Ok)
-                return "ok";
+		if (valueResult.Result == Result.Ok)
+			return "ok";
 
-            return "succes";
-        }
-    }
-
+		return "success";
+	}
+}

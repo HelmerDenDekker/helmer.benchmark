@@ -31,7 +31,7 @@ public class Result
 	public ICollection<string> Messages { get; private set; }
 
 	/// <summary>
-	///     Gets or sets a statuscode defining the Result
+	///     Gets or sets a status-code defining the Result
 	/// </summary>
 	public HttpStatusCode StatusCode { get; private set; }
 
@@ -76,13 +76,15 @@ public class Result
 	public static Result NotFound => new(new List<string> { "The resource cannot be found by the code" }, HttpStatusCode.NotFound);
 
 	/// <summary>
-	///     Request failed, The resource was found by the code, but the content is not conform the criteria. Equivalent to 406 Not acceptable.
+	///     Request failed, The resource was found by the code, but the content is not conform the criteria. Equivalent to 406
+	///     Not acceptable.
 	/// </summary>
 	public static Result NotAcceptable =>
 		new(new List<string> { "The resource was found by the code, but the content is not conform the criteria" }, HttpStatusCode.NotAcceptable);
 
 	/// <summary>
-	///     Request failed, the request cannot be fully processed by the code due to cancellation or timeout. Equivalent to 408 timeout
+	///     Request failed, the request cannot be fully processed by the code due to cancellation or timeout. Equivalent to 408
+	///     timeout
 	/// </summary>
 	public static Result Timeout =>
 		new(new List<string> { "The request cannot be processed by the code due to cancellation or timeout" }, HttpStatusCode.RequestTimeout);
@@ -97,9 +99,10 @@ public class Result
 	///     Request failed, an insecure url address is used (http:// instead of https://) Refers to 426 Upgrade Required.
 	/// </summary>
 	public static Result InsecureUrl => new(new List<string> { "The request cannot be processed by the server, due to an insecure url address being used." }, HttpStatusCode.UpgradeRequired);
-	
+
 	/// <summary>
-	///     Request failed, an insecure url address is used (http:// instead of https://) Refers to 451, in the meaning that this resource is not available due to legal reasons (gdpr)
+	///     Request failed, an insecure url address is used (http:// instead of https://) Refers to 451, in the meaning that
+	///     this resource is not available due to legal reasons (gdpr)
 	/// </summary>
 	public static Result UnavailableForLegalReasons =>
 		new(new List<string> { "The request cannot be processed by the server, due to legal reasons." }, HttpStatusCode.UnavailableForLegalReasons);

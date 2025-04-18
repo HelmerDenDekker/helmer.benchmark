@@ -1,6 +1,4 @@
-﻿using Helmer.Benchmark.Application.Code.V1;
-
-namespace Helmer.Benchmark.Application.Code.V1.Extensions;
+﻿namespace Helmer.Benchmark.Application.Code.V1.Extensions;
 
 public static class ResultExtensions
 {
@@ -15,7 +13,7 @@ public static class ResultExtensions
 	{
 		return new Result<TValue>(value, result.Messages.ToList(), result.StatusCode);
 	}
-	
+
 	/// <summary>
 	///     Creates a user-friendly message
 	/// </summary>

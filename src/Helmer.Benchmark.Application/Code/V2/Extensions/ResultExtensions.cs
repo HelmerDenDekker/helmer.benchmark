@@ -1,12 +1,11 @@
-﻿using Helmer.Benchmark.Application.Code.V2;
-using System.Net;
+﻿using System.Net;
 
 namespace Helmer.Benchmark.Application.Code.V2.Extensions;
 
 public static class ResultExtensions
 {
 	/// <summary>
-	/// A successful response
+	///     A successful response
 	/// </summary>
 	/// <param name="result"></param>
 	/// <returns>true if the response was successful</returns>
@@ -26,7 +25,7 @@ public static class ResultExtensions
 	}
 
 	/// <summary>
-	/// The information message containing the generic description of the error
+	///     The information message containing the generic description of the error
 	/// </summary>
 	/// <param name="result"></param>
 	/// <returns>The information message containing the generic description of the error</returns>
@@ -62,13 +61,13 @@ public static class ResultExtensions
 				return "The request cannot be processed by the server. A generic error has occured.";
 			case Result.NotImplemented:
 				return "The request cannot be processed by the server. This functionality is not implemented";
-			default: 
+			default:
 				throw new NotImplementedException();
 		}
 	}
-	
+
 	/// <summary>
-	/// The corresponding HttpStatusCode for the Error
+	///     The corresponding HttpStatusCode for the Error
 	/// </summary>
 	/// <param name="result"></param>
 	/// <returns></returns>
