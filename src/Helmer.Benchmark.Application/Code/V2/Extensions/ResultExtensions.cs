@@ -42,7 +42,7 @@ public static class ResultExtensions
 			case Result.BadRequest:
 				return "The request cannot be processed by the code due to a validation error";
 			case Result.Unauthorized:
-				return "The request cannot be processed by the code, user is not authorizatized";
+				return "The request cannot be processed by the code, user is not authorized";
 			case Result.Forbidden:
 				return "Access to the resource is forbidden";
 			case Result.NotFound:
