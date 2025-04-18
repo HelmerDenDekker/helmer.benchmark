@@ -111,7 +111,7 @@ public class Result
 	///     Request failed, a generic error occured. Equivalent to 500 Internal server error.
 	/// </summary>
 	public static Result InternalServerError =>
-		new(new List<string> { "The request cannot be processed by the server. A generic error has occured." }, HttpStatusCode.InternalServerError);
+		new(new List<string> { "The request cannot be processed by the server. A generic error has occurred." }, HttpStatusCode.InternalServerError);
 
 	/// <summary>
 	///     Request failed, the code is not implemented. Equivalent to 501 NotImplemented.
