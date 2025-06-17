@@ -10,4 +10,7 @@ public class ArrayBenchmark
 
 	[Benchmark]
 	public void TestWithoutArray() => ArrayTest.TestWithoutArray();
+	
+	[Benchmark]
+	public void TestWithList() => ArrayTest.TestWithList();
 }
