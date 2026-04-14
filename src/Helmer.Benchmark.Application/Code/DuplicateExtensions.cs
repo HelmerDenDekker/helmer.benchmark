@@ -37,9 +37,18 @@ public static class DuplicateExtensions
     
     public static List<string> GetDuplicatesHashSet(this List<DuplicateTest> inputs)
     {
-        var hashSet = new HashSet<string>();
+        var seen = new HashSet<string>();
+        var duplicates = new HashSet<string>();
+
+        foreach (var item in inputs)
+        {
+            if (!seen.Add(item.Name))
+                duplicates.Add(item.Name);
+        }
         
-        return inputs.Where(e => !hashSet.Add(e.Name)).Select(e => e.Name).ToList();
+        return duplicates.ToList();
+        // This is unstable in real life:
+        //return inputs.Where(e => !seen.Add(e.Name)).Select(e => e.Name).ToList();
     }
     
     public static List<string> GetDuplicatesFindAll(this List<DuplicateTest> inputs)
