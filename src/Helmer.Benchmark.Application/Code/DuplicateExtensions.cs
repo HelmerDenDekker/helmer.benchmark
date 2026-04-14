@@ -56,7 +56,7 @@ public static class DuplicateExtensions
 
         for (int i = 0; i < inputs.Count; i++) {
             DuplicateTest item = inputs[i];
-            if (inputs.IndexOf(item, i + 1) != -1 && !duplicates.Contains(item.Name)) {
+            if (inputs.FindIndex(i + 1, x => x.Name == item.Name) != -1 && !duplicates.Contains(item.Name)) {
                 duplicates.Add(item.Name);
             }
         }
