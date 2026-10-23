@@ -1,4 +1,4 @@
-﻿namespace Helmer.Benchmark.Application;
+﻿namespace Helmer.Benchmark.Application.Code;
 
 public static class DuplicateExtensions
 {

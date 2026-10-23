@@ -1,4 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
+using Helmer.Benchmark.Application.Code;
 
 namespace Helmer.Benchmark.Application;
 
