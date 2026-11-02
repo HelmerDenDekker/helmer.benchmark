@@ -30,7 +30,7 @@ public class FilterServiceUnitTests
         {
             new() { FilterId = _firstFilterId, Value = 70 },
             new() { FilterId = _firstFilterId, Value = 140 },
-            new() { FilterId = _secondFilterId, Value = 200 },
+            new() { FilterId = _secondFilterId, Value = 200 }
         };
         _containerSetOne = new List<Container>
         {
@@ -41,8 +41,8 @@ public class FilterServiceUnitTests
                 Properties = new List<Property>
                 {
                     new() { FilterId = _firstFilterId, Value = "70" },
-                    new() { FilterId = _secondFilterId, Value = "200" },
-                },
+                    new() { FilterId = _secondFilterId, Value = "200" }
+                }
             },
             new()
             { 
@@ -51,8 +51,8 @@ public class FilterServiceUnitTests
                 Properties = new List<Property>
                 {
                     new() { FilterId = _firstFilterId, Value = "140" },
-                    new() { FilterId = _secondFilterId, Value = "200" },
-                },
+                    new() { FilterId = _secondFilterId, Value = "200" }
+                }
             },
             new()
             { 
@@ -61,8 +61,8 @@ public class FilterServiceUnitTests
                 Properties = new List<Property>
                 {
                     new() { FilterId = _firstFilterId, Value = "70" },
-                    new() { FilterId = _secondFilterId, Value = "210" },
-                },
+                    new() { FilterId = _secondFilterId, Value = "210" }
+                }
             },
             new()
             { 
@@ -71,8 +71,8 @@ public class FilterServiceUnitTests
                 Properties = new List<Property>
                 {
                     new() { FilterId = _firstFilterId, Value = "90" },
-                    new() { FilterId = _secondFilterId, Value = "210" },
-                },
+                    new() { FilterId = _secondFilterId, Value = "210" }
+                }
             },
             new()
             { 
@@ -81,11 +81,10 @@ public class FilterServiceUnitTests
                 Properties = new List<Property>
                 {
                     new() { FilterId = _firstFilterId, Value = "90" },
-                    new() { FilterId = _secondFilterId, Value = "200" },
-                },
+                    new() { FilterId = _secondFilterId, Value = "200" }
+                }
             }
         };
-
     }
     
     [Test]
@@ -102,21 +101,6 @@ public class FilterServiceUnitTests
         filteredContainers.Should().ContainSingle(c => c.ContainerId == _containerOne);
         filteredContainers.Should().ContainSingle(c => c.ContainerId == _containerTwo);
     }
-    
-    // [Test]
-    // public void FilterContainersWithUniqueFilters()
-    // {
-    //     // Arrange
-    //     var filterService = new FilterService();
-    //     
-    //     // Act
-    //     var filteredContainers = filterService.FilterContainersWithUniqueFilters(_containerSetOne, _filterSetOne);
-    //     
-    //     // Assert
-    //     filteredContainers.Should().HaveCount(2);
-    //     filteredContainers.Should().ContainSingle(c => c.ContainerId == _containerOne);
-    //     filteredContainers.Should().ContainSingle(c => c.ContainerId == _containerTwo);
-    // }
     
     [Test]
     public void FilterContainersByGithubCopilot()

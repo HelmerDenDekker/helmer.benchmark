@@ -171,45 +171,7 @@ public class FilterService
         
         return [.. result];
     }
-
-
-    // This idea is not going to work
-    // public List<Container> FilterContainersWithUniqueFilters(List<Container> containers, List<Filter> filters)
-    // {
-    //     var filteredContainers = new List<Container>();
-    //     
-    //     // first group the filters by FilterId for efficient lookup
-    //     var filterGroups = filters.GroupBy(f => f.FilterId).ToDictionary(g => g.Key, g => g.ToList());
-    //    
-    //     var uniqueFilters = new Dictionary<int, List<Filter>>();
-    //      int i = 0;
-    //     // TODO: this is going to be bizarrely complex in a hurry
-    //     foreach (var filterGroup in filterGroups)
-    //     {
-    //         if (filterGroup.Value.Count > 1)
-    //         {
-    //             // TODO need to create as many uniqueFilters as there are filters in the group
-    //             uniqueFilters[i] = filterGroup.Value;
-    //             i++;
-    //         }
-    //     }
-    //     
-    //     foreach (var uniqueFilter in uniqueFilters)
-    //     {
-    //         foreach (var container in containers)
-    //         {
-    //             if(uniqueFilter.Value.All(f => container.Properties.Any(p => p.FilterId == f.FilterId && EvaluateCondition(p.Value, f.Condition, f.Value))))
-    //             {
-    //                 filteredContainers.Add(container);
-    //             }
-    //         }
-    //     }
-    //     
-    //     return filteredContainers;
-    // }
 }
-
-
 
 public class Filter
 {
@@ -221,8 +183,6 @@ public class Filter
 public class Property
 {
     public Guid FilterId { get; set; }
-    
-   
     public string Value { get; set; } = string.Empty;
 }
 
