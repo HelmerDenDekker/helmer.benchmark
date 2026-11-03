@@ -1,5 +1,6 @@
-﻿using BenchmarkDotNet.Running;
+using BenchmarkDotNet.Running;
 using Helmer.Benchmark.Application;
+using Helmer.Benchmark.Application.Code;
 
 public class Program
 {
