@@ -30,6 +30,22 @@ internal static class ArrayTest
 
 		return displayValue;
 	}
+	
+	public static string TestWithList()
+	{
+		var selectionItems = new List<SelectionItem> { new SelectionItem { HeaderId = 1 }, new SelectionItem { HeaderId = 2 } };
+		var selectedProperties = new List<SelectedProperty> { new SelectedProperty { HeaderId = 1, DisplayValue = "One" }, new SelectedProperty { HeaderId = 2, DisplayValue = "Two" } };
+
+		var selectedDisplayValues = selectionItems
+			.Select(asi => selectedProperties.FirstOrDefault(sap => sap.HeaderId == asi.HeaderId)?.DisplayValue)
+			.Where(s => !string.IsNullOrWhiteSpace(s))
+			.ToList();
+
+		var displayValue = string.Join(", ", selectedDisplayValues);
+
+		return displayValue;
+	}
+	
 }
 
 internal class SelectionItem
@@ -41,5 +57,5 @@ internal class SelectedProperty
 {
 	public int HeaderId { get; set; }
 
-	public string DisplayValue { get; set; }
+	public string DisplayValue { get; set; } = string.Empty;
 }

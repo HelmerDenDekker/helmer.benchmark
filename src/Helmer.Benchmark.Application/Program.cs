@@ -1,7 +1,8 @@
-﻿using BenchmarkDotNet.Running;
-using Helmer.Benchmark.Application;
+using BenchmarkDotNet.Running;
 
-public class Program
+namespace Helmer.Benchmark.Application;
+
+public abstract class Program
 {
-	public static void Main(string[] args) => BenchmarkRunner.Run<ResultBenchmark>(new ShortRunWithMemoryDiagnoserConfig());
+	public static void Main(string[] args) => BenchmarkRunner.Run<FilterBenchMark>(new ShortRunWithMemoryDiagnoserConfig());
 }

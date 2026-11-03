@@ -21,7 +21,6 @@ public static class ResultTest
 	public static string TestCompareLogic()
 	{
 		var commandResult = TestCreateCommandType();
-
 		var valueResult = TestCreateQueryType();
 
 		if (commandResult.StatusCode == valueResult.StatusCode)
