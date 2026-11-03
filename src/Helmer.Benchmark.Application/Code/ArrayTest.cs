@@ -57,5 +57,5 @@ internal class SelectedProperty
 {
 	public int HeaderId { get; set; }
 
-	public string DisplayValue { get; set; }
+	public string DisplayValue { get; set; } = string.Empty;
 }
