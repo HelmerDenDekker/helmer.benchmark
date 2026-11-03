@@ -24,8 +24,7 @@ public class DuplicatesBenchMark
         // change item 6666 to be duplicate
         _testList[6666].Name = _testList[1].Name;
     }
-
-
+    
     [Benchmark(Baseline = true)]
     public void DuplicateHashSet()
     {
@@ -60,5 +59,4 @@ public class DuplicatesBenchMark
         var duplicates = _testList.GetDuplicatesContains();
         Console.WriteLine("The duplicate elements in the list are: " + string.Join(", ", duplicates));
     }
-
 }

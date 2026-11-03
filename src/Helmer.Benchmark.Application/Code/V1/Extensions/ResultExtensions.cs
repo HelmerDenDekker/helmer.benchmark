@@ -32,8 +32,13 @@ public static class ResultExtensions
 	public static string GetErrorMessage(this Result result)
 	{
 		var userMessage = result.Messages.FirstOrDefault(mes => mes.StartsWith("User:"));
+		
+		if (userMessage == null)
+		{
+			return string.Empty;
+		}
 
-		return userMessage?.Replace("User:", "");
+		return userMessage.Replace("User:", "");
 	}
 
 	/// <summary>

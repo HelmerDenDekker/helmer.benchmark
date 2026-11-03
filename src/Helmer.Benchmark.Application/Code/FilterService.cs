@@ -193,7 +193,7 @@ public class Container
 { 
     public string Name { get; set; } = string.Empty;
     public Guid ContainerId { get; set; }
-    public List<Property> Properties { get; set; } = new List<Property>();
+    public List<Property> Properties { get; set; } = new();
 }
 
 public enum LogicCondition
